@@ -21,7 +21,7 @@ public class SelenideWebDriver implements WebDriverProvider {
   @Nonnull
   @Override
   public WebDriver createDriver(@Nonnull Capabilities capabilities) {
-    File app = downloadApk();
+    //File app = downloadApk();
 
     UiAutomator2Options options = new UiAutomator2Options();
     options.merge(capabilities);
@@ -30,8 +30,8 @@ public class SelenideWebDriver implements WebDriverProvider {
     options.setDeviceName("otus");
     options.setPlatformVersion("12");
 
-    options.setApp(app.getAbsolutePath());
-    //options.setApp("/Volumes/Sea/OTUS/appium-otus/src/test/resources/app_java_pro_v2.apk");
+    //options.setApp(app.getAbsolutePath());
+    options.setApp("/Volumes/Sea/OTUS/appium-otus/src/test/resources/app_java_pro_v2.apk");
 
     try {
       return new AndroidDriver(new URL("http://127.0.0.1:5566/wd/hub"), options);
